@@ -1,0 +1,29 @@
+sponso_affinilead
+CoregAff_Affinilead_
+coregaff_affinilead
+coreg_optincollect
+sponso_optincollect
+
+
+
+sponso_affinilead
+Affinilead DECO sponso : 48817 (16,34) + 1 (16)
+Affinilead TURBO sponso : 22598 (14,32) + 
+Affinilead CLUBIC sponso : 13139 (2,20)
+ 
+CoregAff_Affinilead_
+Affinilead DECO coreg : 5065 (16,34) 
+Affinilead TURBO coreg : 3755 (14,32)
+Affinilead CLUBIC coreg : 2338 (2,20)
+ 
+sponso_optincollect
+Optin Collect DECO sponso : 22482 (16,34)
+Optin Collect TURBO sponso : 5770 (14,32)
+Optin Collect CLUBIC sponso : 5046 (2,20) 
+
+coreg_optincollect
+Optin Collect DECO coreg : 9118 (16,34)
+Optin Collect TURBO coreg :  4605 (14,32)
+Optin Collect CLUBIC coreg : 3868(2,20)
+
+SELECT count(id) FROM `event` WHERE `type_campagne` = "sponso_affinilead" AND `newsletters` = "14,32" and comments = '"ok"' and date >="2016-02-01" and date <="2016-02-29"
