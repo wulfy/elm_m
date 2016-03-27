@@ -31,23 +31,23 @@
 		<header>
 
           <div id="nav_content" class="navbar-fixed">
-            <?php global $post; $pagename = $post->post_name; ?>
+            <?php global $post; $pagename =(is_search())?"": $post->post_name; ?>
             <nav class="white">
               <div class="nav-wrapper">
               <a class="brand-logo" href="<?php bloginfo('url');?>"><img src="<?php bloginfo('template_directory'); ?>/images/logolm.jpg"/> </a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars"></i></a>
               <ul class="right hide-on-med-and-down">
                 <li class="<?php echo ($pagename=='equipement urbain')?'active':''; ?> base hover_green">
-                  <a href='<?php echo get_permalink(get_page_by_title( 'Equipement urbain' )) ?>'><span><i class="fa fa-bus fa-fw"></i>EQUIPEMENT URBAIN</span></a>
+                  <a href='<?php echo get_permalink(get_page_by_title( 'Equipement urbain' )) ?>'><span>EQUIPEMENT URBAIN</span></a>
                 </li>
                 <li class="<?php echo ($pagename=='identification brady')?'active':''; ?> base hover_red">
-                  <a href='<?php echo get_permalink(get_page_by_title( 'Identification brady' )) ?>'><span><i class="fa fa-print fafw"></i>IDENTIFICATION BRADY</span></a>
+                  <a href='<?php echo get_permalink(get_page_by_title( 'Identification brady' )) ?>'><span>IDENTIFICATION BRADY</span></a>
                 </li>
                 <li class="<?php echo ($pagename=='protection securite')?'active':''; ?> base hover_blue">
-                  <a href="<?php echo get_permalink(get_page_by_title( 'Protection securite' )) ?>"><span><i class="fa fa-medkit fa-fw"></i>PROTECTION SÉCURITÉ</span></a>
+                  <a href="<?php echo get_permalink(get_page_by_title( 'Protection securite' )) ?>"><span>PROTECTION SÉCURITÉ</span></a>
                 </li>
                 <li class="<?php echo ($pagename=='signalisation')?'active':''; ?> base hover_orange">
-                  <a href='<?php echo get_permalink(get_page_by_title( 'Signalisation' ))  ?>'><span><i class="fa fa-exclamation-triangle fa-fw"></i>SIGNALISATION</span></a>
+                  <a href='<?php echo get_permalink(get_page_by_title( 'Signalisation' ))  ?>'><span>SIGNALISATION</span></a>
                 </li>
                 <li class="colored large">
                   <?php echo do_shortcode('[get_login_container]')?>

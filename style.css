@@ -121,6 +121,10 @@ nav .search-query{
     color: blue !important;
 }
 
+.basewhite a{
+    color: white !important;
+}
+
 .hover_blue a:hover, .hover_blue.active a{
     background-color: blue;
     color: white !important;
@@ -181,7 +185,7 @@ nav .search-query{
     transition:         width 400ms ease, background 400ms ease;
     width: 1px;
     height: 55px;
-    font-size: 30px;
+    font-size: 15px;
 }
 
 #searchBox .search-query:focus {
@@ -189,7 +193,7 @@ nav .search-query{
     border: 2px solid #c3c0ab;
     cursor: text;
     outline: 0;
-    width: 330px;
+    width: 230px;
     clear: both;
     display: block;
      background-image: url(images/search-icon-2x.png);
