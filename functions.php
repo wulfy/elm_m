@@ -124,6 +124,35 @@ function goldpot_add_theme_page() {
 	add_theme_page(__('Customize Top Nav Link'), __('Top Nav Links'), 'edit_themes', basename(__FILE__), 'goldpot_theme_page');
 }**/
 
+
+/**
+*
+*
+**/
+
+// determine the topmost parent of a term
+function get_term_top_most_parent($term_id, $taxonomy){
+    // start from the current term
+    $parent  = get_term($term_id);
+    // climb up the hierarchy until we reach a term with parent = '0'
+    $watchdog = 0;
+    while ($parent->parent != '0' && $watchdog<100){
+        $term_id = $parent->parent;
+
+        $parent  = get_term($term_id);
+        $watchdog++;
+    }
+    return $parent;
+}
+
+function get_mypost_taxonomies($post_id){
+	global $wpdb; global $wp_query; 
+	$query = $wpdb->prepare ('SELECT term_taxonomy_id FROM '.$wpdb->term_relationships. ' WHERE object_id = %d', $wp_query->queried_object_id);
+	$product_categories = $wpdb->get_results( $query );
+
+	return $product_categories;
+}
+
 /**
 * WPSHOP HELPERS
 */

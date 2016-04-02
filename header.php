@@ -30,23 +30,24 @@
 <body <?php body_class(); ?>>
 		<header>
 
-          <div id="nav_content" class="navbar-fixed">
-            <?php global $post; $pagename =(is_search())?"": $post->post_name; ?>
+          <div id="nav_content" class="navbar-fixed ">
+            <?php global $post; $current_id = $wp_query->queried_object_id; $pagename =(is_search())?"": $post->post_name; $wshop_category= get_term_top_most_parent($current_id)->name; if(strlen($wshop_category) <1) $wshop_category = get_term_top_most_parent(get_mypost_taxonomies($current_id)[0]->term_taxonomy_id)->name; $pagename.= " ".$wshop_category?>
+
             <nav class="white">
               <div class="nav-wrapper">
               <a class="brand-logo" href="<?php bloginfo('url');?>"><img src="<?php bloginfo('template_directory'); ?>/images/logolm.jpg"/> </a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars"></i></a>
               <ul class="right hide-on-med-and-down">
-                <li class="<?php echo ($pagename=='equipement urbain')?'active':''; ?> base hover_green">
+                <li class="<?php echo (stristr($pagename,'equipement urbain'))?'active':''; ?> base hover_green">
                   <a href='<?php echo get_permalink(get_page_by_title( 'Equipement urbain' )) ?>'><span>EQUIPEMENT URBAIN</span></a>
                 </li>
-                <li class="<?php echo ($pagename=='identification brady')?'active':''; ?> base hover_red">
+                <li class="<?php echo (stristr($pagename,'identification brady'))?'active':''; ?> base hover_red">
                   <a href='<?php echo get_permalink(get_page_by_title( 'Identification brady' )) ?>'><span>IDENTIFICATION BRADY</span></a>
                 </li>
-                <li class="<?php echo ($pagename=='protection securite')?'active':''; ?> base hover_blue">
+                <li class="<?php echo (stristr($pagename,'protection securite'))?'active':''; ?> base hover_blue">
                   <a href="<?php echo get_permalink(get_page_by_title( 'Protection securite' )) ?>"><span>PROTECTION SÉCURITÉ</span></a>
                 </li>
-                <li class="<?php echo ($pagename=='signalisation')?'active':''; ?> base hover_orange">
+                <li class="<?php echo (stristr($pagename,'signalisation'))?'active':''; ?> base hover_orange">
                   <a href='<?php echo get_permalink(get_page_by_title( 'Signalisation' ))  ?>'><span>SIGNALISATION</span></a>
                 </li>
                 <li class="colored large">
@@ -68,17 +69,17 @@
                      <?php get_search_form(); ?>
                   </div>
                 </li>
-                 <li class="base ">
-                  <a href='javascript:scrollToId("#group2")'><span><i class="fa fa-bus fa-fw"></i>EQUIPEMENT URBAIN</span></a>
+                 <li class="<?php echo ($pagename=='equipement urbain')?'active':''; ?> base hover_green">
+                  <a href='<?php echo get_permalink(get_page_by_title( 'Equipement urbain' )) ?>'><span>EQUIPEMENT URBAIN</span></a>
                 </li>
-                <li class="base ">
-                  <a href='javascript:scrollToId("#group3")'><span><i class="fa fa-print fafw"></i>IDENTIFICATION BRADY</span></a>
+                <li class="<?php echo ($pagename=='identification brady')?'active':''; ?> base hover_red">
+                  <a href='<?php echo get_permalink(get_page_by_title( 'Identification brady' )) ?>'><span>IDENTIFICATION BRADY</span></a>
                 </li>
-                <li class="base ">
-                  <a href="javascript:scrollToId('#group4')"><span><i class="fa fa-medkit fa-fw"></i>PROTECTION SÉCURITÉ</span></a>
+                <li class="<?php echo ($pagename=='protection securite')?'active':''; ?> base hover_blue">
+                  <a href="<?php echo get_permalink(get_page_by_title( 'Protection securite' )) ?>"><span>PROTECTION SÉCURITÉ</span></a>
                 </li>
-                <li class="base ">
-                  <a href='<?php echo do_shortcode('[get_category_link term_slug="signalisation_vehicules"]') ?>'><span><i class="fa fa-exclamation-triangle fa-fw"></i>SIGNALISATION</span></a>
+                <li class="<?php echo ($pagename=='signalisation')?'active':''; ?> base hover_orange">
+                  <a href='<?php echo get_permalink(get_page_by_title( 'Signalisation' ))  ?>'><span>SIGNALISATION</span></a>
                 </li>
                 <li class="colored">
                   <?php echo do_shortcode('[get_login_container]')?>

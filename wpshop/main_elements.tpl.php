@@ -566,10 +566,10 @@ ob_end_clean();
 /*	Product mini display (List)										Produits mini liste */
 ob_start();
 ?>
-<li class="product_main_information_container-mini-list wpshop_clearfix wpshop_clear {WPSHOP_PRODUCT_CLASS}" itemscope itemtype="http://data-vocabulary.org/Product" >
+<li class="product_main_information_container-mini-list wpshop_clearfix wpshop_clear {WPSHOP_PRODUCT_CLASS} valign-wrapper" itemscope itemtype="http://data-vocabulary.org/Product" >
 	{WPSHOP_PRODUCT_EXTRA_STATE}
-	<a href="{WPSHOP_PRODUCT_PERMALINK}" class="product_thumbnail-mini-list" title="{WPSHOP_PRODUCT_TITLE}">{WPSHOP_PRODUCT_THUMBNAIL}</a>
-	<span class="product_information-mini-list" itemprop="offers" itemscope itemtype="http://data-vocabulary.org/Offers">
+	<a href="{WPSHOP_PRODUCT_PERMALINK}" class="product_thumbnail-mini-list" title="{WPSHOP_PRODUCT_TITLE}">{WPSHOP_PRODUCT_THUMBNAIL_MEDIUM}</a>
+	<span class="product_information-mini-list valign" itemprop="offers" itemscope itemtype="http://data-vocabulary.org/Offers">
 		<a href="{WPSHOP_PRODUCT_PERMALINK}" title="{WPSHOP_PRODUCT_TITLE}" class="wpshop_clearfix">
 			<h2 itemprop="name" >{WPSHOP_PRODUCT_TITLE}</h2>
 			<span class="crossed_out_price">{WPSHOP_CROSSED_OUT_PRICE}</span> {WPSHOP_PRODUCT_PRICE}
@@ -767,7 +767,7 @@ ob_end_clean();
  */
 ob_start();
 ?><div class="category_main_information_container-mini-list wpshop_clear" >
-	<a href="{WPSHOP_CATEGORY_LINK}" >
+	<a href="{WPSHOP_CATEGORY_LINK}" > tititi
 	<div class="category_thumbnail-mini-list" >{WPSHOP_CATEGORY_THUMBNAIL}</div>
 		<div class="category_information-mini-list" >
 			<div class="category_title-mini-list" >{WPSHOP_CATEGORY_TITLE}</div>

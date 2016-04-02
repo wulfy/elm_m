@@ -19,7 +19,7 @@ html{
     font-size: 12px !important;
 }
 nav ul a{
-    color: blue;
+    color: #0066c0;
 }
 
 nav .wps-mini-cart-header .wps-icon-basket{
@@ -43,8 +43,8 @@ nav i.fa{
     height: 100%;
 }
 
-.large .wps-mini-cart-opener{
-    font-size: 0em;
+.wps-mini-cart-opener{
+    font-size: 0em !important;
     margin: 0;
     padding: 0;
     padding-right: 5px;
@@ -72,6 +72,10 @@ nav .login_container a{
 
 nav .large .login_container span, .large .user_infos_more{
         display: block;
+}
+
+.user_infos_more span{
+    font-size: 0em !important;
 }
 
 nav .login_container .fa{
@@ -118,7 +122,8 @@ nav .search-query{
 }
 
 .base a{
-    color: blue !important;
+    color: #0066c0 !important;
+    text-shadow: 2px 2px 4px #999;
 }
 
 .basewhite a{
@@ -149,7 +154,7 @@ nav .search-query{
 /***** ******/
 
 #content{
-    min-height: 100vh;
+    min-height: 50vh;
     padding: 0 20px;
     /*box-shadow: 1px 1px 12px #555;*/
 }
@@ -164,6 +169,12 @@ nav .search-query{
 }
 
 /** SEARCH **/
+
+/*list*/
+#searchContent li{
+    opacity: 0;
+}
+
 /* Search widget */
 #searchBox #searchsubmit {
     display: none;
@@ -219,6 +230,17 @@ nav .search-query{
 /******/
 
 /*** category listing ****/
+
+.products_listing{
+    font-size: 1.2rem;
+}
+.container_product_listing button{
+    display: none;
+}
+
+.valign-wrapper{
+    display: flex !important;
+}
 .wpshop_categories_grid {
     /*height: 150px;
     max-width: 150px;
@@ -276,7 +298,7 @@ font-size: 1.2rem;
 color: #000;
 }
 .resultTypeTitle{
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .wpshop_category_informations{
@@ -383,6 +405,8 @@ body .entry-content button, body .bouton_wpshop, body .wpshop_cart_buttons_conta
   bottom: -3px;
   left: -3px;
 }
+
+
 
 .resultTypeTitle{
     margin-bottom: 20px;
@@ -509,6 +533,11 @@ display: inline-block;
     z-index: 10;
     position: relative;
 }
+
+#wps-breadcrumb .fa{
+float: none;
+}
+
 .wps-zoom-loupe{
     z-index: 9 !important;
 }
@@ -532,11 +561,6 @@ a.nou{
     text-decoration: none;
 }
 
-#contact_footer{
-    text-align: center;
-    color: #BDBDBD;
-    height: 150px;
-}
 
 /**** CONTAINER ****/
 .container{
@@ -544,8 +568,25 @@ a.nou{
 }
 
 /**** footer ****/
+
+.imgfooter{
+    height: 50px;
+}
 #colophon{
     background-color: #6E6E6E;
     margin: 0;
     padding: 0;
+}
+
+/*** section title ***/
+.section-title{
+    color: #000;
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 4px #999;
+
+}
+
+.borderline{
+    border-bottom: solid 1px #efebe9;
 }

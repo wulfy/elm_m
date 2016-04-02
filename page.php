@@ -15,7 +15,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content <?php if(is_admin_bar_showing()) echo 'under_admin'; ?>" role="main">
-			<?php echo do_shortcode('[wpshop_breadcrumb]') ?> 
+			<?php echo do_shortcode('[wpshop_breadcrumb]') ?>
 			<?php /* The loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -30,7 +30,7 @@ get_header(); ?>
 						<h1 class="entry-title"><?php the_title(); ?></h1>
 					</header><!-- .entry-header -->
 
-					<div class="entry-content">
+					<div class="entry-content center-align">
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentythirteen' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
 					</div><!-- .entry-content -->
