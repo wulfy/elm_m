@@ -46,7 +46,7 @@
                   <a href='<?php echo get_permalink(get_page_by_title( 'Equipement urbain' )) ?>'><span>EQUIPEMENT URBAIN</span></a>
                 </li>
                 <li class="<?php echo (stristr($pagename,'identification'))?'active':''; ?> base hover_blue">
-                  <a href='<?php echo get_permalink(get_page_by_title( 'Identification brady' )) ?>'><span>İDENTİFİCATİON  SİGNALÉTİQUE</span></a>
+                  <a href='<?php echo get_permalink(get_page_by_title( 'Identification' )) ?>'><span>İDENTİFİCATİON  SİGNALÉTİQUE</span></a>
                 </li>
                 <li class="<?php echo (stristr($pagename,'protection'))?'active':''; ?> base hover_red">
                   <a href="<?php echo get_permalink(get_page_by_title( 'Protection sécurité' )) ?>"><span>PROTECTION SÉCURITÉ</span></a>
