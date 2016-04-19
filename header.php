@@ -33,19 +33,23 @@
           <div id="nav_content" class="navbar-fixed ">
             <?php global $post; $current_id = $wp_query->queried_object_id; $pagename =(is_search())?"": $post->post_name; $wshop_category= get_term_top_most_parent($current_id)->name; if(strlen($wshop_category) <1) $wshop_category = get_term_top_most_parent(get_mypost_taxonomies($current_id)[0]->term_taxonomy_id)->name; $pagename.= " ".$wshop_category?>
 
+            <!-- Dropdown Structure -->
+            <div id="searchBox" class="searchBox">
+                     <?php get_search_form(); ?>
+                  </div>
             <nav class="white">
               <div class="nav-wrapper">
               <a class="brand-logo" href="<?php bloginfo('url');?>"><img src="<?php bloginfo('template_directory'); ?>/images/logolm.jpg"/> </a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars"></i></a>
               <ul class="right hide-on-med-and-down">
-                <li class="<?php echo (stristr($pagename,'equipement urbain'))?'active':''; ?> base hover_green">
+                <li class="<?php echo (stristr($pagename,'equipement'))?'active':''; ?> base hover_green">
                   <a href='<?php echo get_permalink(get_page_by_title( 'Equipement urbain' )) ?>'><span>EQUIPEMENT URBAIN</span></a>
                 </li>
-                <li class="<?php echo (stristr($pagename,'identification brady'))?'active':''; ?> base hover_red">
-                  <a href='<?php echo get_permalink(get_page_by_title( 'Identification brady' )) ?>'><span>IDENTIFICATION BRADY</span></a>
+                <li class="<?php echo (stristr($pagename,'identification'))?'active':''; ?> base hover_blue">
+                  <a href='<?php echo get_permalink(get_page_by_title( 'Identification brady' )) ?>'><span>İDENTİFİCATİON  SİGNALÉTİQUE</span></a>
                 </li>
-                <li class="<?php echo (stristr($pagename,'protection securite'))?'active':''; ?> base hover_blue">
-                  <a href="<?php echo get_permalink(get_page_by_title( 'Protection securite' )) ?>"><span>PROTECTION SÉCURITÉ</span></a>
+                <li class="<?php echo (stristr($pagename,'protection'))?'active':''; ?> base hover_red">
+                  <a href="<?php echo get_permalink(get_page_by_title( 'Protection sécurité' )) ?>"><span>PROTECTION SÉCURITÉ</span></a>
                 </li>
                 <li class="<?php echo (stristr($pagename,'signalisation'))?'active':''; ?> base hover_orange">
                   <a href='<?php echo get_permalink(get_page_by_title( 'Signalisation' ))  ?>'><span>SIGNALISATION</span></a>
@@ -56,26 +60,27 @@
                 <li class="colored large">
                   <?php echo do_shortcode('[wps_mini_cart]') ?>
                 </li>
-                <li class="colored large">
-                  <div id="searchBox">
-                     <?php get_search_form(); ?>
-                  </div>
+                <li class="colored large" >
+                  <a id="searchbutton" class="dropdown-button" href="#!" data-activates="dropdown1">
+                      <i class="fa fa-search"></i>
+                  </a>
+                  
                 </li>
 
               </ul>
-              <ul class="side-nav" id="mobile-demo">
+              <ul class="side-nav " id="mobile-demo">
                 <li class="colored">
-                  <div id="searchBox">
+                  <div id="searchBoxMobile" class="searchBox">
                      <?php get_search_form(); ?>
                   </div>
                 </li>
                  <li class="<?php echo ($pagename=='equipement urbain')?'active':''; ?> base hover_green">
                   <a href='<?php echo get_permalink(get_page_by_title( 'Equipement urbain' )) ?>'><span>EQUIPEMENT URBAIN</span></a>
                 </li>
-                <li class="<?php echo ($pagename=='identification brady')?'active':''; ?> base hover_red">
-                  <a href='<?php echo get_permalink(get_page_by_title( 'Identification brady' )) ?>'><span>IDENTIFICATION BRADY</span></a>
+                <li class="<?php echo ($pagename=='identification brady')?'active':''; ?> base hover_blue">
+                  <a href='<?php echo get_permalink(get_page_by_title( 'Identification brady' )) ?>'><span>İDENTİFİCATİON  SİGNALÉTİQUE</span></a>
                 </li>
-                <li class="<?php echo ($pagename=='protection securite')?'active':''; ?> base hover_blue">
+                <li class="<?php echo ($pagename=='protection securite')?'active':''; ?> base hover_red">
                   <a href="<?php echo get_permalink(get_page_by_title( 'Protection securite' )) ?>"><span>PROTECTION SÉCURITÉ</span></a>
                 </li>
                 <li class="<?php echo ($pagename=='signalisation')?'active':''; ?> base hover_orange">

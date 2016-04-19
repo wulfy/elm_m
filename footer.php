@@ -20,12 +20,18 @@ $( document ).ready(function(){
 	var searchContent = $('#searchContent');
 	if(searchContent.length)
 		Materialize.showStaggeredList(searchContent);
+
+	var searchBox = $("#searchBox");
+	var searchbutton = $("#searchbutton");
+
+	searchBox.focusout(function() {$(this).removeClass("animate")});
+	searchbutton.click(function() {searchBox.toggleClass("animate"); (searchBox.is(":focus"))?'':searchBox.focus();});
 })
 </script>
 <footer class="page-footer grey">
           <div class="container">
             <div class="row">
-           	 <div class="col l4 offset-l2 s12">
+           	 <div class="col l4 s12">
                 <h5 class="white-text">Contact</h5>
                 <ul>
                   <li><a class="grey-text text-lighten-3" href="#!"><div  class="row valign-wrapper"><img class="imgfooter col s2." src="<?php bloginfo('template_directory'); ?>/images/lm.png"/> <span class="col s10">Michel Lasry</span></div></a></li>
@@ -35,7 +41,7 @@ $( document ).ready(function(){
                   <li><a class="grey-text text-lighten-3" href="#!"><i class="fa fa-map-marker"></i> : 31 Allee des romains 74370 PRINGY</a></li>
                 </ul>
               </div>
-              <div class="col l6 s12">
+              <div class="col l6 offset-l2 s12">
                 <h5 class="white-text">Références</h5>
                 <p class="grey-text text-lighten-4">Références  : Aéroports , Ambulances , Armée , Autoroutes , CEA , Centres  commerciaux , Centres  hospitaliers , CERN ,  CIRAD , Conseils  généraux , Communautés  de  communes , Délégation  générale  à  l'armement , Douanes , EADS , ERDF , Entreprises  , Garages , Industries , Mairies , Polices  , Préfectures  , RATP , Pompiers  SDIS , SAMU , SNCF , SNSM  , Stations  de  skis , Tunnel  du  mont  blanc ..</p>
               </div>

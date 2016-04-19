@@ -99,13 +99,15 @@ nav li.colored{
 nav li.colored a{
     color: #FFF;
 }
+nav li.colored a:hover{
+    color: yellow;
+}
+
 nav .wps-numeration-cart{
     color: #FFF !important;
 }
 
 nav li.colored:hover, nav .wps-numeration-cart:hover,.login_container a:hover{
-    color: yellow !important;
-    font-size: 1rem;
     background-color: #000;
     height: 64px;
 }
@@ -123,7 +125,7 @@ nav .search-query{
 
 .base a{
     color: #0066c0 !important;
-    text-shadow: 2px 2px 4px #999;
+   font-weight: bold;
 }
 
 .basewhite a{
@@ -135,7 +137,7 @@ nav .search-query{
     color: white !important;
 }
 .hover_orange a:hover, .hover_orange.active a{
-    background-color: orange;
+    background-color: #ff6f00;
     color: white !important;
 }
 .hover_red a:hover, .hover_red.active a{
@@ -154,8 +156,8 @@ nav .search-query{
 /***** ******/
 
 #content{
-    min-height: 50vh;
-    padding: 0 20px;
+    min-height: 70vh;
+    padding: 10px 20px;
     /*box-shadow: 1px 1px 12px #555;*/
 }
 
@@ -176,7 +178,7 @@ nav .search-query{
 }
 
 /* Search widget */
-#searchBox #searchsubmit {
+/*#searchBox #searchsubmit {
     display: none;
 }
 
@@ -226,7 +228,81 @@ nav .search-query{
     .comment-list .children > li:before {
         background-image: url(images/dotted-line-2x.png);
     }
+}**/
+
+nav #searchbutton{
+    font-size: 2rem;
 }
+
+#searchBox{
+    position: fixed;
+    top:-10px;
+    right: 5px;
+    width: 300px;
+    height: 50px;
+    z-index: -10;
+}
+
+
+.searchBox .searchbutton{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+#searchBox .fa{
+        color: black;
+    font-size: 2rem;
+}
+
+.searchBox input{
+    border : none;
+    padding-left: 20px;
+    width: 250px;
+    height: 50px;
+    margin: 0;
+}
+
+#searchBoxMobile .card{
+height: 50px;
+    }
+
+#searchBoxMobile label{
+    display: none;
+}
+
+#searchBoxMobile .fa{
+    line-height: initial;
+}
+
+.animate{
+    -webkit-animation: animate 0.5s forwards;
+    animation: animate 0.5s forwards;  
+}
+
+
+@keyframes animate {
+
+    30% {
+         top:62px;
+    }
+
+    60% {
+         top:58px;
+    }
+    90% {
+         top:62px;
+    }
+
+    100% {
+         top:60px;
+         z-index: 1;
+
+    }
+}
+
+
+
 /******/
 
 /*** category listing ****/
@@ -417,7 +493,7 @@ body .entry-content button, body .bouton_wpshop, body .wpshop_cart_buttons_conta
 
 /***** BREADCRUMB ***/
 #content #wps-breadcrumb{
-    padding-top: 20px;
+    padding-top: 0px;
     padding-bottom: 40px;
     font-style: italic;
 }
@@ -563,10 +639,15 @@ a.nou{
 
 
 /**** CONTAINER ****/
-.container{
-
+#lm_animate_Container{
+height: 80vh;
+overflow: hidden;
+margin-top: 20px;
 }
 
+#lm_animate_Container img{
+    max-width: 30%;
+}
 /**** footer ****/
 
 .imgfooter{

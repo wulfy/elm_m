@@ -131,7 +131,7 @@ function goldpot_add_theme_page() {
 **/
 
 // determine the topmost parent of a term
-function get_term_top_most_parent($term_id, $taxonomy){
+function get_term_top_most_parent($term_id){
     // start from the current term
     $parent  = get_term($term_id);
     // climb up the hierarchy until we reach a term with parent = '0'
