@@ -557,6 +557,10 @@ display: inline-block;
    max-width: 50%;
 }
 
+.wps-catalog img{
+    max-height: 90%;
+    width: auto;
+}
 /*******************/
 
 
