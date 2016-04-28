@@ -306,7 +306,9 @@ height: 50px;
 /******/
 
 /*** category listing ****/
-
+.hidden_sorting_criteria_field{
+    display: block;
+}
 .products_listing{
     font-size: 1.2rem;
 }
@@ -515,6 +517,7 @@ ul.products_listing.grid_mode img{
 img.attachment-medium{
     max-width: 80% !important;
     max-height: 200px;
+    vertical-align: middle;
 }
 
 /*sub list display */
@@ -522,6 +525,11 @@ img.attachment-medium{
     max-width: 100%;
     margin-top : 30px;
     text-decoration:none;
+}
+
+.product_main_information_container-mini-grid  h2{
+        margin: 0;
+    font-size: 1.5rem;
 }
 
 .category_subcategories_list .category_picture_container{
@@ -618,6 +626,10 @@ float: none;
     z-index: 9 !important;
 }
 
+.detail_product_info{
+    padding-left: 2%;
+}
+
 
 
 /** contact **/
@@ -670,4 +682,24 @@ margin-top: 20px;
 
 .borderline{
     border-bottom: solid 1px #efebe9;
+}
+
+/** single product **/
+.wps-product-section label, .wps-product-section .wps-productQtyForm a, .wpshop_product_qty_input{
+    font-size: 1rem;
+    color: inherit;
+}
+
+.wps-product-section label{
+    margin-right: 10px;
+}
+
+button.wpbutton{
+    display: inline-block;
+        padding-top: 0;
+    padding-bottom: 0;
+}
+
+.wps-catalog .wpbutton{
+    display: none;
 }
